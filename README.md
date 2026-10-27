@@ -38,8 +38,8 @@ Web personal y portfolio profesional diseñado para presentar mi perfil, formaci
 7. **Contacto:**
    - Mensaje: *"¿Hablamos de tecnología y proyectos?"*.
    - Correo electrónico integrado: [gema.espada94@gmail.com](mailto:gema.espada94@gmail.com).
-   - Perfil de LinkedIn integrado: [gema-maría-espada-valverde](https://www.linkedin.com/in/gema-mar%C3%ADa-espada-valverde-a91258b4/).
-   - Perfil de GitHub integrado: [github.com/gemaespada](https://github.com/gemaespada).
+   - Perfil de LinkedIn integrado: [Gema María Espada Valverde](https://www.linkedin.com/in/gema-mar%C3%ADa-espada-valverde-a91258b4/).
+   - Perfil de GitHub integrado: [Gema Espada](https://github.com/gemaespada).
    - Formulario de contacto frontend interactivo con validación y confirmación visual.
 
 ---
