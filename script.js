@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initMobileMenu() {
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link, .nav-item-cta .btn');
+  const navLinks = document.querySelectorAll('.nav-link');
 
   if (!navToggle || !navMenu) return;
 
@@ -41,6 +41,15 @@ function initMobileMenu() {
         navToggle.setAttribute('aria-expanded', 'false');
       }
     });
+  });
+
+  // Cerrar con la tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
+      navMenu.classList.remove('is-active');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.focus();
+    }
   });
 
   // Cerrar si se redimensiona a pantalla de escritorio
@@ -110,7 +119,7 @@ function initActiveNavOnScroll() {
 function initScrollReveal() {
   // Elementos a los que aplicamos la animación de entrada suave
   const elementsToReveal = document.querySelectorAll(
-    '.card, .hero-content, .hero-visual, .section-header, .continuous-learning-card'
+    '.section-header, .about-intro, .trait, .idea-panel, .edu-item, .module, .skill-group, .cert-item, .contact-channels, .contact-form-card'
   );
 
   elementsToReveal.forEach((el) => el.classList.add('reveal-item'));
@@ -136,63 +145,75 @@ function initScrollReveal() {
 }
 
 /**
- * 5. Manejo del formulario de contacto con feedback amigable
+ * 5. Formulario de contacto
+ * No hay servicio de envío configurado: tras validar los campos se abre el
+ * cliente de correo del usuario (mailto) con el mensaje ya redactado, usando
+ * la dirección de correo que ya figura en la página.
  */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   const notification = document.getElementById('form-notification');
-  const submitBtn = document.getElementById('btn-submit-contact');
-
   if (!form || !notification) return;
+
+  const mailLink = document.querySelector('a[href^="mailto:"]');
+  const recipient = mailLink ? mailLink.getAttribute('href').replace('mailto:', '') : '';
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  const fields = {
+    name: (v) => (v ? '' : 'Escribe tu nombre.'),
+    email: (v) => (!v ? 'Escribe tu correo electrónico.' : emailPattern.test(v) ? '' : 'Introduce un correo válido, por ejemplo nombre@dominio.com.'),
+    message: (v) => (v ? '' : 'Escribe tu mensaje.')
+  };
+
+  function setError(name, text) {
+    const input = form.elements[name];
+    const out = document.getElementById(`error-${name}`);
+    if (out) out.textContent = text;
+    input.setAttribute('aria-invalid', text ? 'true' : 'false');
+  }
+
+  // Limpia el error de un campo al corregirlo
+  Object.keys(fields).forEach((name) => {
+    form.elements[name].addEventListener('input', () => setError(name, ''));
+  });
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    notification.className = 'form-notification';
 
-    const name = form.elements['name']?.value.trim() || '';
-    const email = form.elements['email']?.value.trim() || '';
-    const message = form.elements['message']?.value.trim() || '';
+    const values = {};
+    let firstInvalid = null;
+    Object.keys(fields).forEach((name) => {
+      values[name] = form.elements[name].value.trim();
+      const error = fields[name](values[name]);
+      setError(name, error);
+      if (error && !firstInvalid) firstInvalid = form.elements[name];
+    });
 
-    // Validación básica de campos requeridos
-    if (!name || !email || !message) {
-      showNotification('Por favor, completa todos los campos del formulario.', 'error');
+    if (firstInvalid) {
+      firstInvalid.focus();
+      showNotification('Revisa los campos marcados antes de continuar.', 'error');
       return;
     }
 
-    // Efecto de envío interactivo
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>Enviando...</span>`;
+    if (!recipient) {
+      showNotification('No se ha podido preparar el mensaje. Inténtalo de nuevo más tarde.', 'error');
+      return;
     }
 
-    setTimeout(() => {
-      // Notificación de éxito
-      showNotification(
-        `¡Gracias por tu mensaje, ${name}! Tu solicitud ha sido registrada correctamente. Me pondré en contacto contigo pronto.`,
-        'success'
-      );
+    const subject = `Mensaje desde tu web de ${values.name}`;
+    const body = `${values.message}\n\n—\n${values.name}\n${values.email}`;
+    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-      form.reset();
-
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = `
-          <span>Enviar mensaje</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-        `;
-      }
-    }, 700);
+    showNotification(
+      `Se ha abierto tu aplicación de correo con el mensaje preparado. El mensaje no se envía hasta que lo mandes desde ella. Si no se abre, escribe a ${recipient}.`,
+      'success'
+    );
   });
 
   function showNotification(text, type) {
     notification.textContent = text;
     notification.className = `form-notification is-${type}`;
-    
-    // Ocultar notificación tras 7 segundos si es de éxito
-    if (type === 'success') {
-      setTimeout(() => {
-        notification.className = 'form-notification';
-      }, 7000);
-    }
   }
 }
 
