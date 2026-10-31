@@ -122,11 +122,24 @@ function updateThemeLabel() {
  * 0b. Selector de tema (claro por defecto). La preferencia se guarda en
  * localStorage y se aplica antes del primer pintado desde el <head>.
  */
+function syncFavicon(theme) {
+  const isDark = theme ? theme === 'dark' : currentTheme() === 'dark';
+  const targetSvg = isDark ? '/favicon-dark.svg' : '/favicon-light.svg';
+  const svgFavicon = document.getElementById('favicon-svg') || document.querySelector('link[type="image/svg+xml"]');
+  if (svgFavicon) {
+    // Si ya tiene el href correcto, no tocar
+    if (svgFavicon.getAttribute('href') !== targetSvg) {
+      svgFavicon.setAttribute('href', targetSvg);
+    }
+  }
+}
+
 function initTheme() {
   const btn = document.getElementById('theme-toggle');
   const metaColor = document.getElementById('meta-theme-color');
   const syncMeta = () => { if (metaColor) metaColor.setAttribute('content', currentTheme() === 'dark' ? '#0a0f24' : '#ffffff'); };
   syncMeta();
+  syncFavicon();
   updateThemeLabel();
   if (!btn) return;
 
@@ -138,6 +151,7 @@ function initTheme() {
     root.setAttribute('data-theme', next);
     store.set('portfolio-theme', next);
     syncMeta();
+    syncFavicon(next);
     updateThemeLabel();
     window.setTimeout(() => root.classList.remove('theme-transition'), 450);
   });

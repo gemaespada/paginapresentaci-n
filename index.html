@@ -13,6 +13,10 @@
         d.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
         var lang = localStorage.getItem('portfolio-lang');
         d.setAttribute('lang', lang === 'en' ? 'en' : 'es');
+        if (theme === 'dark') {
+          var fav = document.getElementById('favicon-svg');
+          if (fav) fav.setAttribute('href', '/favicon-dark.svg');
+        }
       } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
     })();
   </script>
@@ -45,12 +49,12 @@
   <meta name="twitter:image" content="__SITE_URL__/assets/og-image.png">
 
   <!-- Favicon -->
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="icon" href="favicon.ico" sizes="48x48">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" id="favicon-svg">
+  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
   <!-- Datos estructurados (perfil honesto: estudiante de Full Stack) -->
   <script type="application/ld+json">
