@@ -3,9 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gema Espada Valverde, Desarrollo Web Full Stack en formación. Máster en Desarrollo Web Full Stack en Conquer Blocks y Grado en Educación Primaria Bilingüe.">
+
+  <!-- Tema e idioma: se aplican antes del primer pintado para evitar parpadeos -->
+  <script>
+    (function () {
+      try {
+        var d = document.documentElement;
+        var theme = localStorage.getItem('portfolio-theme');
+        d.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+        var lang = localStorage.getItem('portfolio-lang');
+        d.setAttribute('lang', lang === 'en' ? 'en' : 'es');
+      } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
+    })();
+  </script>
+
+  <title data-i18n="meta.title">Gema Espada | Desarrolladora Full Stack en formación</title>
+  <meta name="description" content="Graduada en Educación Primaria Bilingüe y Desarrolladora Full Stack en formación. Ampliando conocimientos en programación, aplicaciones, bases de datos, inteligencia artificial y despliegue." data-i18n-attr="content:meta.desc">
   <meta name="author" content="Gema Espada Valverde">
-  <title>Gema Espada | Desarrollo Web Full Stack en formación</title>
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" id="meta-theme-color">
+
+  <!-- URL canónica: sustituir __SITE_URL__ por el dominio definitivo (ver README) -->
+  <link rel="canonical" href="__SITE_URL__/">
+
+  <!-- Open Graph / redes sociales (LinkedIn, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Gema Espada Valverde">
+  <meta property="og:url" content="__SITE_URL__/">
+  <meta property="og:title" content="Gema Espada | Desarrolladora Full Stack en formación" data-i18n-attr="content:meta.title">
+  <meta property="og:description" content="Graduada en Educación Primaria Bilingüe y Desarrolladora Full Stack en formación. Ampliando conocimientos en programación, aplicaciones, bases de datos, inteligencia artificial y despliegue." data-i18n-attr="content:meta.desc">
+  <meta property="og:image" content="__SITE_URL__/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Gema Espada: Desarrolladora Full Stack en formación" data-i18n-attr="content:meta.ogAlt">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gema Espada | Desarrolladora Full Stack en formación" data-i18n-attr="content:meta.title">
+  <meta name="twitter:description" content="Graduada en Educación Primaria Bilingüe y Desarrolladora Full Stack en formación. Ampliando conocimientos en programación, aplicaciones, bases de datos, inteligencia artificial y despliegue." data-i18n-attr="content:meta.desc">
+  <meta name="twitter:image" content="__SITE_URL__/assets/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Datos estructurados (perfil honesto: estudiante de Full Stack) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Gema Espada Valverde",
+    "url": "__SITE_URL__/",
+    "jobTitle": "Desarrolladora Full Stack en formación",
+    "description": "Graduada en Educación Primaria Bilingüe y Desarrolladora Full Stack en formación.",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Universidad de Córdoba" }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/gema-mar%C3%ADa-espada-valverde-a91258b4/",
+      "https://github.com/gemaespada"
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,49 +79,115 @@
 </head>
 <body id="top">
 
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+  <symbol id="i-python" viewBox="0 0 24 24"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></symbol>
+  <symbol id="i-mysql" viewBox="0 0 24 24"><path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z"/></symbol>
+  <symbol id="i-git" viewBox="0 0 24 24"><path d="M13.09 23.549a1.54 1.54 0 0 1-2.18 0L.451 13.089a1.54 1.54 0 0 1 0-2.179l7.191-7.19 2.733 2.733a1.85 1.85 0 0 0 .964 2.326v6.66a1.849 1.849 0 1 0 1.54 0V8.957l2.508 2.508a1.85 1.85 0 1 0 1.09-1.09l-2.634-2.634a1.85 1.85 0 0 0-2.378-2.377L8.73 2.63 10.91.451a1.54 1.54 0 0 1 2.179 0l10.459 10.46a1.54 1.54 0 0 1 0 2.179z"/></symbol>
+  <symbol id="i-vscode" viewBox="0 0 24 24"><path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/></symbol>
+  <symbol id="i-linux" viewBox="0 0 24 24"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.645 2.645 0 00-.402-.533 1.45 1.45 0 00-.275-.333c.182 0 .338-.03.465-.067a.615.615 0 00.314-.334c.108-.267 0-.697-.345-1.163-.345-.467-.931-.995-1.788-1.521-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.123 8.123 0 01.647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335.039.003.075.006.11.006.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01c.053 0 .105.005.157.014.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602-.369-.066-.61-.2-.723-.4-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336zm7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8.097 8.097 0 01-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065zm-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></symbol>
+  <symbol id="i-html5" viewBox="0 0 24 24"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></symbol>
+  <symbol id="i-supabase" viewBox="0 0 24 24"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"/></symbol>
+  <symbol id="i-cloudflare" viewBox="0 0 24 24"><path d="M16.5088 16.8447c.1475-.5068.0908-.9707-.1553-1.3154-.2246-.3164-.6045-.499-1.0615-.5205l-8.6592-.1123a.1559.1559 0 0 1-.1333-.0713c-.0283-.042-.0351-.0986-.021-.1553.0278-.084.1123-.1484.2036-.1562l8.7359-.1123c1.0351-.0489 2.1601-.8868 2.5537-1.9136l.499-1.3013c.0215-.0561.0293-.1128.0147-.168-.5625-2.5463-2.835-4.4453-5.5499-4.4453-2.5039 0-4.6284 1.6177-5.3876 3.8614-.4927-.3658-1.1187-.5625-1.794-.499-1.2026.119-2.1665 1.083-2.2861 2.2856-.0283.31-.0069.6128.0635.894C1.5683 13.171 0 14.7754 0 16.752c0 .1748.0142.3515.0352.5273.0141.083.0844.1475.1689.1475h15.9814c.0909 0 .1758-.0645.2032-.1553l.12-.4268zm2.7568-5.5634c-.0771 0-.1611 0-.2383.0112-.0566 0-.1054.0415-.127.0976l-.3378 1.1744c-.1475.5068-.0918.9707.1543 1.3164.2256.3164.6055.498 1.0625.5195l1.8437.1133c.0557 0 .1055.0263.1329.0703.0283.043.0351.1074.0214.1562-.0283.084-.1132.1485-.204.1553l-1.921.1123c-1.041.0488-2.1582.8867-2.5527 1.914l-.1406.3585c-.0283.0713.0215.1416.0986.1416h6.5977c.0771 0 .1474-.0489.169-.126.1122-.4082.1757-.837.1757-1.2803 0-2.6025-2.125-4.727-4.7344-4.727"/></symbol>
+  <symbol id="i-cfpages" viewBox="0 0 24 24"><path d="M10.715 14.32H5.442l-.64-1.203L13.673 0l1.397.579-1.752 9.112h5.24l.648 1.192L10.719 24l-1.412-.54ZM4.091 5.448a.5787.5787 0 1 1 0-1.1574.5787.5787 0 0 1 0 1.1574zm1.543 0a.5787.5787 0 1 1 0-1.1574.5787.5787 0 0 1 0 1.1574zm1.544 0a.5787.5787 0 1 1 0-1.1574.5787.5787 0 0 1 0 1.1574zm8.657-2.7h5.424l.772.771v16.975l-.772.772h-7.392l.374-.579h6.779l.432-.432V3.758l-.432-.432h-4.676l-.552 2.85h-.59l.529-2.877.108-.552ZM2.74 21.265l-.772-.772V3.518l.772-.771h7.677l-.386.579H2.98l-.432.432v16.496l.432.432h5.586l-.092.579zm1.157-1.93h3.28l-.116.58h-3.55l-.192-.193v-3.473l.578 1.158zm13.117 0 .579.58H14.7l.385-.58z"/></symbol>
+  <symbol id="i-openai" viewBox="0 0 24 24"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></symbol>
+  <symbol id="i-notebooklm" viewBox="0 0 24 24"><path d="M11.999 3.201C5.372 3.201 0 8.528 0 15.101V20.8h2.212v-.568c0-2.666 2.178-4.827 4.866-4.827 2.688 0 4.866 2.16 4.866 4.827v.568h2.212v-.568c0-3.877-3.17-7.019-7.078-7.019A7.075 7.075 0 0 0 2.992 14.5a7.355 7.355 0 0 1 6.568-4.016c4.057 0 7.347 3.264 7.347 7.287V20.8h2.212V17.77c0-5.235-4.28-9.481-9.56-9.481a9.563 9.563 0 0 0-6.217 2.28A9.795 9.795 0 0 1 12 5.393c5.406 0 9.788 4.346 9.788 9.707V20.8H24V15.1c-.001-6.573-5.373-11.9-12.001-11.9Z"/></symbol>
+  <symbol id="i-sqlalchemy" viewBox="0 0 24 24"><path d="M11.8 15.955a44.068 44.068 0 0 1-1.673-.691c-1.736-.757-1.981-.772-2.499-.143-.119.146-.25.236-.287.2-.111-.111.219-.644.617-.993.325-.285.433-.325.791-.285.228.025.985.29 1.682.586 1.573.669 2.034.811 2.635.811.731 0 1.106-.512.876-1.192-.057-.171-.04-.228.074-.228.213 0 .322.797.168 1.255a1.617 1.617 0 0 1-.424.614c-.251.211-.41.257-.879.254a3.853 3.853 0 0 1-1.082-.188h.001Zm.301-2.225c0-.048.179-.134.401-.188l.401-.099.086-1.446c.094-1.599.025-3.172-.148-3.383-.063-.074-.253-.165-.427-.205-.705-.156-.236-.264 1.133-.264 1.368 0 1.803.099 1.152.264-.561.14-.564.148-.564 2.43 0 1.266.046 2.22.111 2.342.092.171.228.207.752.207 1.081 0 1.453-.255 1.747-1.203.088-.284.315-.233.236.054-.037.134-.097.54-.134.91l-.068.669H14.44c-1.286 0-2.339-.04-2.339-.088Zm5.312-.068c0-.086.083-.171.219-.236.183-.086.302-.265.734-1.11.686-1.337 1.767-3.634 1.87-3.978.079-.262.097-.276.392-.31.171-.02.313-.031.316-.025l.527 1.152c.284.628.856 1.824 1.271 2.654.695 1.397.772 1.523 1.005 1.636.142.069.253.174.253.237 0 .099-.122.111-1.175.111-1.056 0-1.175-.012-1.175-.114 0-.068.091-.142.236-.191.134-.043.236-.122.236-.182 0-.057-.139-.432-.31-.834l-.31-.731h-2.35l-.225.495c-.421.928-.43 1.147-.037 1.252.196.054.25.097.227.185-.025.103-.127.117-.867.117-.794.006-.837 0-.837-.128Zm-15.652.025a10.933 10.933 0 0 1-.808-.196l-.549-.154.282-.518.281-.518-.227-.281c-.322-.399-.737-1.272-.74-1.554-.003-.657.851-1.61 1.898-2.122.72-.353 1.291-.362 2.009-.026l.54.253.157-.224c.085-.123.156-.285.156-.356 0-.071.071-.134.157-.134.085 0 .156.023.156.048 0 .063-.629 1.651-.669 1.691-.017.016-.187-.063-.381-.177-.546-.321-1.232-.535-1.764-.549-1.238-.031-1.667 1.178-.794 2.236l.308.373.839-.68c.942-.76 1.05-.777 1.784-.27.825.569.839 1.434.042 2.339-.705.805-1.431 1.027-2.677.819Zm5.984-.165c-.646-.301-1.229-.876-1.565-1.547-.538-1.076-.373-1.765.646-2.695.856-.782 1.556-1.087 2.498-1.087.68 0 .825.037 1.266.307 1.044.646 1.303 1.878.675 3.221-.737 1.577-2.294 2.37-3.52 1.801Zm-3.872-.702c.409-.322.381-.917-.063-1.389-.558-.592-.731-.566-1.713.253-.976.814-.982.783.185 1.155.771.251 1.255.242 1.591-.019Zm6.034-.046c.484-.239.817-1.343.68-2.259-.17-1.13-1.698-1.901-2.819-1.423-1.153.493-1.17 1.804-.037 2.985.791.828 1.471 1.044 2.176.697Zm11.359-1.414c.04-.071-.845-2.003-.928-2.023-.06-.017-.976 1.872-.976 2.014 0 .072 1.861.08 1.904.009Z"/></symbol>
+  <symbol id="i-zsh" viewBox="0 0 24 24"><path d="M11.415 5.038a.58.58 0 0 0-.543.197L.135 18.021a.58.58 0 0 0 .071.814.58.58 0 0 0 .815-.07L11.757 5.979a.58.58 0 0 0-.07-.815.6.6 0 0 0-.272-.126m-8.113.317a3.133 3.133 0 0 0-3.12 3.12 3.13 3.13 0 0 0 3.12 3.119A3.133 3.133 0 0 0 6.42 8.475a3.13 3.13 0 0 0-3.119-3.119m0 1.806a1.3 1.3 0 0 1 1.314 1.313 1.3 1.3 0 0 1-1.314 1.312A1.3 1.3 0 0 1 1.99 8.475a1.3 1.3 0 0 1 1.312-1.314m5.253 5.253a3.13 3.13 0 0 0-3.119 3.119 3.13 3.13 0 0 0 3.12 3.118 3.133 3.133 0 0 0 3.118-3.12 3.133 3.133 0 0 0-3.119-3.118m0 1.805a1.3 1.3 0 0 1 1.313 1.314c0 .735-.577 1.312-1.312 1.312a1.3 1.3 0 0 1-1.314-1.312 1.3 1.3 0 0 1 1.313-1.314m7.201 3.276a.58.58 0 0 0-.578.578.58.58 0 0 0 .578.578h7.666a.58.58 0 0 0 .579-.578.58.58 0 0 0-.579-.578Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V5"/><circle cx="12" cy="4" r="1"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M2 12.5v3M22 12.5v3"/></symbol>
+  <symbol id="i-workflow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M6 9v3a3 3 0 0 0 3 3h6"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0z"/><path d="M12 17v4"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-appai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M12 7.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9z"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></symbol>
+  <symbol id="i-tables" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="8" height="6" rx="1"/><rect x="13" y="14" width="8" height="6" rx="1"/><path d="M7 10v1a3 3 0 0 0 3 3h3"/></symbol>
+  <symbol id="i-orm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11M11 3l4 4-4 4M20 17H9M13 13l-4 4 4 4"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="9" r="2"/><path d="M6 7v10M18 11v1a4 4 0 0 1-4 4h-3"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 9.5 4.3 4.3 0 0 1 17 18z"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  </svg>
+
+  <a href="#inicio" class="skip-link" data-i18n="skip">Saltar al contenido</a>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
   <!-- ==================== NAVEGACIÓN ==================== -->
   <header class="header" id="header">
-    <nav class="navbar container" aria-label="Navegación principal">
-      <a href="#top" class="nav-brand" aria-label="Gema Espada - Inicio">
-        <span class="brand-monogram">GE</span>
+    <nav class="navbar container" aria-label="Navegación principal" data-i18n-attr="aria-label:nav.aria">
+      <a href="#top" class="nav-brand" aria-label="Gema Espada - Inicio" data-i18n-attr="aria-label:nav.brand">
+        <span class="brand-monogram" aria-hidden="true">GE</span>
         <span class="brand-name">Gema Espada</span>
       </a>
 
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="#inicio" class="nav-link">Inicio</a></li>
-        <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
-        <li><a href="#formacion" class="nav-link">Formación</a></li>
-        <li><a href="#certificaciones" class="nav-link">Certificaciones</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        <li><a href="#inicio" class="nav-link" data-i18n="nav.home">Inicio</a></li>
+        <li><a href="#sobre-mi" class="nav-link" data-i18n="nav.about">Sobre mí</a></li>
+        <li><a href="#formacion" class="nav-link" data-i18n="nav.education">Formación</a></li>
+        <li><a href="#conocimientos" class="nav-link" data-i18n="nav.skills">Conocimientos</a></li>
+        <li><a href="#certificaciones" class="nav-link" data-i18n="nav.certs">Certificaciones</a></li>
+        <li><a href="#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
+        <!-- Redes dentro del menú desplegable (solo móviles estrechos) -->
+        <li class="nav-social-mobile">
+          <a href="https://www.linkedin.com/in/gema-mar%C3%ADa-espada-valverde-a91258b4/" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Gema Espada (se abre en una pestaña nueva)" data-i18n-attr="aria-label:social.linkedin.aria"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+          <a href="https://github.com/gemaespada" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Perfil de GitHub de Gema Espada (se abre en una pestaña nueva)" data-i18n-attr="aria-label:social.github.aria"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a>
+          <a href="https://wa.me/34689062235" class="icon-btn icon-btn--wa" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp (se abre en una pestaña nueva)" data-i18n-attr="aria-label:social.whatsapp.aria"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+        </li>
       </ul>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
+      <div class="nav-tools">
+        <ul class="nav-social" aria-label="Redes y contacto" data-i18n-attr="aria-label:social.group">
+          <li><a href="https://www.linkedin.com/in/gema-mar%C3%ADa-espada-valverde-a91258b4/" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Gema Espada (se abre en una pestaña nueva)" data-tooltip="LinkedIn" data-i18n-attr="aria-label:social.linkedin.aria"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+          <li><a href="https://github.com/gemaespada" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Perfil de GitHub de Gema Espada (se abre en una pestaña nueva)" data-tooltip="GitHub" data-i18n-attr="aria-label:social.github.aria"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+          <li><a href="https://wa.me/34689062235" class="icon-btn icon-btn--wa" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp (se abre en una pestaña nueva)" data-tooltip="Contactar por WhatsApp" data-i18n-attr="aria-label:social.whatsapp.aria;data-tooltip:social.whatsapp.tip"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a></li>
+        </ul>
+
+        <span class="nav-divider" aria-hidden="true"></span>
+
+        <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.group">
+          <span class="lang-pill" aria-hidden="true"></span>
+          <button type="button" class="lang-btn" data-lang="es" lang="es" aria-label="Español" aria-pressed="true">ES</button>
+          <button type="button" class="lang-btn" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+        </div>
+
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambiar a modo oscuro" title="Cambiar a modo oscuro" data-i18n-attr="aria-label:theme.toDark;title:theme.toDark">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu" data-i18n-attr="aria-label:nav.toggle">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
     </nav>
   </header>
 
   <main>
     <!-- ==================== INICIO ==================== -->
-    <section class="hero-section" id="inicio">
+    <section class="hero-section" id="inicio" aria-labelledby="hero-title">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="container hero-container">
         <div class="hero-content">
-          <p class="eyebrow">Desarrollo Web Full Stack en formación</p>
-          <h1 class="hero-title">Gema <span>Espada</span></h1>
-          <p class="hero-quote">Transformando el aprendizaje en código y las ideas en proyectos digitales.</p>
-          <p class="hero-bio">
-            Graduada en Educación Primaria Bilingüe y cursando el Máster en Desarrollo Web Full Stack.
-            Construyo mi perfil técnico paso a paso, con ganas de aprender y de crear.
-          </p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Desarrolladora Full Stack en formación</p>
+          <h1 class="hero-title" id="hero-title">Gema <span>Espada</span></h1>
+          <p class="hero-quote" data-i18n="hero.quote">Transformando el aprendizaje en código y las ideas en proyectos digitales.</p>
+          <p class="hero-bio" data-i18n="hero.bio">Graduada en Educación Primaria Bilingüe y cursando el Máster en Desarrollo Full Stack. Construyo mi perfil técnico paso a paso, con ganas de aprender y de crear.</p>
           <div class="hero-actions">
             <a href="#formacion" class="btn btn-primary">
-              <span>Conoce mi formación</span>
+              <span data-i18n="hero.cta1">Conoce mi formación</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a href="#contacto" class="btn btn-secondary">Hablemos de tu idea</a>
+            <a href="#contacto" class="btn btn-secondary" data-i18n="hero.cta2">Hablemos de tu idea</a>
           </div>
         </div>
 
@@ -66,7 +196,7 @@
           <div class="ui-window">
             <div class="ui-bar">
               <span class="ui-dot"></span><span class="ui-dot"></span><span class="ui-dot"></span>
-              <span class="ui-url">tu-idea.web</span>
+              <span class="ui-url" data-i18n="hero.url">tu-idea.web</span>
             </div>
             <div class="ui-body">
               <div class="ui-line ui-line-lg"></div>
@@ -88,138 +218,354 @@
     </section>
 
     <!-- ==================== SOBRE MÍ ==================== -->
-    <section class="section section-about" id="sobre-mi">
+    <section class="section section-about" id="sobre-mi" aria-labelledby="about-title">
       <div class="container about-grid">
         <div class="about-intro">
-          <p class="eyebrow">Sobre mí</p>
-          <h2 class="section-title">De las aulas al código</h2>
-          <p class="about-text">
-            Mi Grado en Educación Primaria Bilingüe me dio una base sólida en comunicación,
-            organización, planificación y aprendizaje.
-          </p>
-          <p class="about-text">
-            Hoy oriento mi carrera hacia el desarrollo de software. Estoy cursando el Máster
-            en Desarrollo Web Full Stack y avanzo con curiosidad y constancia.
-          </p>
-          <div class="path" aria-label="Transición profesional">
-            <span class="path-from">Educación Primaria Bilingüe</span>
+          <p class="eyebrow" data-i18n="about.eyebrow">Sobre mí</p>
+          <h2 class="section-title" id="about-title" data-i18n="about.title">De las aulas al código</h2>
+          <p class="about-text" data-i18n="about.p1">Mi Grado en Educación Primaria Bilingüe me dio una base sólida en comunicación, organización, planificación y aprendizaje.</p>
+          <p class="about-text" data-i18n="about.p2">Hoy oriento mi carrera hacia el desarrollo de software. Estoy cursando el Máster en Desarrollo Full Stack y avanzo con curiosidad y constancia.</p>
+          <div class="path" role="group" aria-label="Transición profesional" data-i18n-attr="aria-label:about.pathAria">
+            <span class="path-from" data-i18n="about.from">Educación Primaria Bilingüe</span>
             <span class="path-line" aria-hidden="true"></span>
-            <span class="path-to">Desarrollo Web Full Stack</span>
+            <span class="path-to" data-i18n="about.to">Desarrolladora Full Stack en formación</span>
           </div>
         </div>
 
         <ul class="traits">
           <li class="trait">
             <span class="trait-num">01</span>
-            <div><h3>Organización</h3><p>Planificar y estructurar el trabajo paso a paso.</p></div>
+            <div><h3 data-i18n="trait.1.t">Organización</h3><p data-i18n="trait.1.d">Planificar y estructurar el trabajo paso a paso.</p></div>
           </li>
           <li class="trait">
             <span class="trait-num">02</span>
-            <div><h3>Comunicación</h3><p>Explicar con claridad y escuchar con atención.</p></div>
+            <div><h3 data-i18n="trait.2.t">Comunicación</h3><p data-i18n="trait.2.d">Explicar con claridad y escuchar con atención.</p></div>
           </li>
           <li class="trait">
             <span class="trait-num">03</span>
-            <div><h3>Pensamiento analítico</h3><p>Dividir un problema en partes y resolverlo con lógica.</p></div>
+            <div><h3 data-i18n="trait.3.t">Pensamiento analítico</h3><p data-i18n="trait.3.d">Dividir un problema en partes y resolverlo con lógica.</p></div>
           </li>
           <li class="trait">
             <span class="trait-num">04</span>
-            <div><h3>Aprendizaje continuo</h3><p>Mejorar cada día y aprender cada herramienta a fondo.</p></div>
+            <div><h3 data-i18n="trait.4.t">Aprendizaje continuo</h3><p data-i18n="trait.4.d">Mejorar cada día y aprender cada herramienta a fondo.</p></div>
           </li>
         </ul>
       </div>
     </section>
 
     <!-- ==================== FORMACIÓN ==================== -->
-    <section class="section section-education" id="formacion">
+    <section class="section section-education" id="formacion" aria-labelledby="edu-title">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow">Formación</p>
-          <h2 class="section-title">Formación y conocimientos técnicos</h2>
+          <p class="eyebrow" data-i18n="edu.eyebrow">Formación</p>
+          <h2 class="section-title" id="edu-title" data-i18n="edu.title">Formación académica</h2>
         </div>
 
         <ul class="edu-list">
           <li class="edu-item edu-current">
-            <span class="badge badge-primary">En curso</span>
-            <h3 class="edu-title">Máster en Desarrollo Web Full Stack</h3>
-            <p class="edu-meta">Conquer Blocks · Acreditado por la Universidad Isabel I</p>
+            <span class="badge badge-primary" data-i18n="edu.badge.current">En curso</span>
+            <h3 class="edu-title" data-i18n="edu.master.t">Máster en Desarrollo Full Stack</h3>
+            <p class="edu-meta" data-i18n="edu.master.m">Conquer Blocks · Acreditado por la Universidad Isabel I</p>
           </li>
           <li class="edu-item">
-            <span class="badge badge-neutral">Finalizado en 2017</span>
-            <h3 class="edu-title">Grado en Educación Primaria Bilingüe</h3>
-            <p class="edu-meta">Mención en Inglés · Universidad de Córdoba</p>
+            <span class="badge badge-neutral" data-i18n="edu.badge.done">Finalizado en 2017</span>
+            <h3 class="edu-title" data-i18n="edu.degree.t">Grado en Educación Primaria Bilingüe</h3>
+            <p class="edu-meta" data-i18n="edu.degree.m">Mención en Inglés · Universidad de Córdoba</p>
           </li>
         </ul>
 
-        <h3 class="block-title">Módulos completados del máster</h3>
+        <h3 class="block-title" data-i18n="edu.modules">Módulos completados del máster</h3>
         <ol class="modules">
-          <li class="module"><span class="module-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span class="module-name">Pseudocódigo</span></li>
-          <li class="module"><span class="module-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span class="module-name">Linux y la Terminal</span></li>
-          <li class="module"><span class="module-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span class="module-name">Python (básico y avanzado)</span></li>
-          <li class="module"><span class="module-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span class="module-name">Git y GitHub</span></li>
-          <li class="module"><span class="module-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span class="module-name">SQL</span></li>
+          <li class="module"><span class="module-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span class="module-name" data-i18n="mod.1">Pseudocódigo</span></li>
+          <li class="module"><span class="module-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span class="module-name" data-i18n="mod.2">Linux y la Terminal</span></li>
+          <li class="module"><span class="module-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span class="module-name" data-i18n="mod.3">Python (básico y avanzado)</span></li>
+          <li class="module"><span class="module-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span class="module-name" data-i18n="mod.4">Git y GitHub</span></li>
+          <li class="module"><span class="module-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span class="module-name" data-i18n="mod.5">SQL</span></li>
+          <li class="module"><span class="module-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span class="module-name" data-i18n="mod.6">IA Google Antigravity</span></li>
         </ol>
+      </div>
+    </section>
 
-        <h3 class="block-title">Conocimientos técnicos</h3>
-        <div class="skills-grid">
-          <div class="skill-group">
-            <h4 class="skill-group-title">Programación y lógica</h4>
-            <ul class="skills-list">
-              <li>Fundamentos de programación y pseudocódigo</li>
-              <li>Python</li>
-              <li>Programación orientada a objetos (POO)</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h4 class="skill-group-title">Bases de datos</h4>
-            <ul class="skills-list">
-              <li>SQL</li>
-              <li>Consultas, JOINs y subconsultas</li>
-              <li>MySQL</li>
-              <li>SQLAlchemy y ORM</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h4 class="skill-group-title">Herramientas de desarrollo</h4>
-            <ul class="skills-list">
-              <li>Linux y terminal</li>
-              <li>Git y GitHub</li>
-            </ul>
-          </div>
+    <!-- ==================== CONOCIMIENTOS TÉCNICOS ==================== -->
+    <section class="section section-skills" id="conocimientos" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow" data-i18n="skills.eyebrow">Conocimientos</p>
+          <h2 class="section-title" id="skills-title" data-i18n="skills.title">Conocimientos técnicos y herramientas</h2>
+          <p class="section-subtitle" data-i18n="skills.subtitle">Un recorrido por las tecnologías, plataformas y herramientas con las que he trabajado durante mi formación, agrupadas por especialidad.</p>
         </div>
+
+
+                <article class="skill-cat" id="skills-prog" aria-labelledby="skills-prog-title">
+          <header class="skill-cat-head">
+            <span class="skill-cat-icon" aria-hidden="true"><svg class="icon"><use href="#i-code"/></svg></span>
+            <div>
+              <h3 id="skills-prog-title" class="skill-cat-title" data-i18n="sk.prog.title">Programación y desarrollo web</h3>
+              <p class="skill-cat-desc" data-i18n="sk.prog.desc">Lógica, lenguajes y bases del desarrollo web.</p>
+            </div>
+          </header>
+          <ul class="skill-grid skill-grid--chips">
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-python"/></svg></span>
+                <h4 class="skill-name">Python</h4>
+              </div>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-doc"/></svg></span>
+                <h4 class="skill-name" data-i18n="sk.prog.2.n">Fundamentos de programación y pseudocódigo</h4>
+              </div>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-cube"/></svg></span>
+                <h4 class="skill-name" data-i18n="sk.prog.3.n">Programación orientada a objetos (POO)</h4>
+              </div>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-db"/></svg></span>
+                <h4 class="skill-name">SQL</h4>
+              </div>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-html5"/></svg></span>
+                <h4 class="skill-name" data-i18n="sk.prog.5.n">HTML y CSS</h4>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="skill-cat" id="skills-db" aria-labelledby="skills-db-title">
+          <header class="skill-cat-head">
+            <span class="skill-cat-icon" aria-hidden="true"><svg class="icon"><use href="#i-db"/></svg></span>
+            <div>
+              <h3 id="skills-db-title" class="skill-cat-title" data-i18n="sk.db.title">Bases de datos y gestión de información</h3>
+              <p class="skill-cat-desc" data-i18n="sk.db.desc">Almacenar, consultar y relacionar datos.</p>
+            </div>
+          </header>
+          <ul class="skill-grid skill-grid--chips">
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-mysql"/></svg></span>
+                <h4 class="skill-name">MySQL</h4>
+              </div>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-sqlalchemy"/></svg></span>
+                <h4 class="skill-name">SQLAlchemy</h4>
+              </div>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-orm"/></svg></span>
+                <h4 class="skill-name">ORM</h4>
+              </div>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-db"/></svg></span>
+                <h4 class="skill-name" data-i18n="sk.db.4.n">Consultas SQL: JOINs y subconsultas</h4>
+              </div>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-tables"/></svg></span>
+                <h4 class="skill-name" data-i18n="sk.db.5.n">Relaciones entre tablas</h4>
+              </div>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-supabase"/></svg></span>
+                <h4 class="skill-name">Supabase</h4>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="skill-cat" id="skills-tools" aria-labelledby="skills-tools-title">
+          <header class="skill-cat-head">
+            <span class="skill-cat-icon" aria-hidden="true"><svg class="icon"><use href="#i-branch"/></svg></span>
+            <div>
+              <h3 id="skills-tools-title" class="skill-cat-title" data-i18n="sk.tools.title">Control de versiones y entornos de desarrollo</h3>
+              <p class="skill-cat-desc" data-i18n="sk.tools.desc">Herramientas del día a día para escribir, versionar y gestionar código.</p>
+            </div>
+          </header>
+          <ul class="skill-grid skill-grid--chips">
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-git"/></svg></span>
+                <h4 class="skill-name">Git</h4>
+              </div>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-github"/></svg></span>
+                <h4 class="skill-name">GitHub</h4>
+              </div>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-vscode"/></svg></span>
+                <h4 class="skill-name">Visual Studio Code</h4>
+              </div>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-terminal"/></svg></span>
+                <h4 class="skill-name" data-i18n="sk.tools.4.n">Linux y terminal</h4>
+              </div>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-zsh"/></svg></span>
+                <h4 class="skill-name">Zsh</h4>
+              </div>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-github"/></svg></span>
+                <h4 class="skill-name" data-i18n="sk.tools.6.n">GitHub con Google Antigravity</h4>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="skill-cat skill-cat--featured" id="skills-ai" aria-labelledby="skills-ai-title">
+          <header class="skill-cat-head">
+            <span class="skill-cat-icon" aria-hidden="true"><svg class="icon"><use href="#i-spark"/></svg></span>
+            <div>
+              <h3 id="skills-ai-title" class="skill-cat-title" data-i18n="sk.ai.title">Inteligencia artificial aplicada al desarrollo</h3>
+              <p class="skill-cat-desc" data-i18n="sk.ai.desc">Contenidos del módulo IA Google Antigravity.</p>
+            </div>
+          </header>
+          <ul class="skill-grid">
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-spark"/></svg></span>
+                <h4 class="skill-name">Google Antigravity</h4>
+              </div>
+              <p class="skill-desc" data-i18n="sk.ai.1.d">Entorno de desarrollo asistido por IA para crear, organizar y revisar proyectos web.</p>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-bot"/></svg></span>
+                <h4 class="skill-name" data-i18n="sk.ai.2.n">Creación y entrenamiento de agentes de IA</h4>
+              </div>
+              <p class="skill-desc" data-i18n="sk.ai.2.d">Configuración de agentes como apoyo a tareas de desarrollo.</p>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span>
+                <h4 class="skill-name" data-i18n="sk.ai.3.n">Automatización de procesos con IA</h4>
+              </div>
+              <p class="skill-desc" data-i18n="sk.ai.3.d">Flujos de trabajo automatizados con Google Antigravity.</p>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-notebooklm"/></svg></span>
+                <h4 class="skill-name">Google NotebookLM</h4>
+              </div>
+              <p class="skill-desc" data-i18n="sk.ai.4.d">Organización y análisis de documentación con IA.</p>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-plug"/></svg></span>
+                <h4 class="skill-name">Model Context Protocol (MCP)</h4>
+              </div>
+              <p class="skill-desc" data-i18n="sk.ai.5.d">Conexión de herramientas externas con modelos de IA, como Stitch con Antigravity.</p>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-layout"/></svg></span>
+                <h4 class="skill-name">Google Stitch</h4>
+              </div>
+              <p class="skill-desc" data-i18n="sk.ai.6.d">Generación de interfaces y propuestas de diseño.</p>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-grid"/></svg></span>
+                <h4 class="skill-name">Open Agent Manager</h4>
+              </div>
+              <p class="skill-desc" data-i18n="sk.ai.7.d">Gestión y organización de agentes de IA.</p>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-appai"/></svg></span>
+                <h4 class="skill-name" data-i18n="sk.ai.8.n">Desarrollo de aplicaciones y páginas web con IA integrada</h4>
+              </div>
+              <p class="skill-desc" data-i18n="sk.ai.8.d">Diseño de interfaces y funcionalidades asistidas por IA.</p>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-openai"/></svg></span>
+                <h4 class="skill-name" data-i18n="sk.ai.9.n">Tecnologías y servicios de OpenAI</h4>
+              </div>
+              <p class="skill-desc" data-i18n="sk.ai.9.d">Exploración de modelos y herramientas de IA de OpenAI.</p>
+            </li>
+          </ul>
+        </article>
+
+        <article class="skill-cat" id="skills-infra" aria-labelledby="skills-infra-title">
+          <header class="skill-cat-head">
+            <span class="skill-cat-icon" aria-hidden="true"><svg class="icon"><use href="#i-cloud"/></svg></span>
+            <div>
+              <h3 id="skills-infra-title" class="skill-cat-title" data-i18n="sk.infra.title">Infraestructura y despliegue web</h3>
+              <p class="skill-cat-desc" data-i18n="sk.infra.desc">Plataformas para publicar y poner en funcionamiento aplicaciones web.</p>
+            </div>
+          </header>
+          <ul class="skill-grid skill-grid--two">
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-cloudflare"/></svg></span>
+                <h4 class="skill-name">Cloudflare</h4>
+              </div>
+              <p class="skill-desc" data-i18n="sk.infra.1.d">Gestión y configuración básica de proyectos y servicios web.</p>
+            </li>
+            <li class="skill-card">
+              <div class="skill-head">
+                <span class="skill-icon" aria-hidden="true"><svg class="icon"><use href="#i-cfpages"/></svg></span>
+                <h4 class="skill-name">Cloudflare Pages</h4>
+              </div>
+              <p class="skill-desc" data-i18n="sk.infra.2.d">Despliegue de páginas estáticas conectado a repositorios de GitHub.</p>
+            </li>
+          </ul>
+        </article>
       </div>
     </section>
 
     <!-- ==================== CERTIFICACIONES ==================== -->
-    <section class="section section-certifications" id="certificaciones">
+    <section class="section section-certifications" id="certificaciones" aria-labelledby="cert-title">
       <div class="container narrow">
         <div class="section-header">
-          <p class="eyebrow">Certificaciones</p>
-          <h2 class="section-title">Certificados obtenidos</h2>
-          <p class="section-subtitle">Certificados obtenidos durante el máster, que continúa en curso.</p>
+          <p class="eyebrow" data-i18n="cert.eyebrow">Certificaciones</p>
+          <h2 class="section-title" id="cert-title" data-i18n="cert.title">Certificados obtenidos</h2>
+          <p class="section-subtitle" data-i18n="cert.subtitle">Certificados obtenidos durante el máster, que continúa en curso.</p>
         </div>
         <ul class="cert-list">
-          <li class="cert-item"><span class="cert-num">01</span><span class="cert-name">Pseudocódigo</span><span class="cert-tag">Certificado</span></li>
-          <li class="cert-item"><span class="cert-num">02</span><span class="cert-name">Python</span><span class="cert-tag">Certificado</span></li>
-          <li class="cert-item"><span class="cert-num">03</span><span class="cert-name">Linux y la Terminal</span><span class="cert-tag">Certificado</span></li>
-          <li class="cert-item"><span class="cert-num">04</span><span class="cert-name">Git y GitHub</span><span class="cert-tag">Certificado</span></li>
-          <li class="cert-item"><span class="cert-num">05</span><span class="cert-name">Python avanzado</span><span class="cert-tag">Certificado</span></li>
+          <li class="cert-item"><span class="cert-num">01</span><span class="cert-name" data-i18n="cert.1">Pseudocódigo</span><span class="cert-tag" data-i18n="cert.tag">Certificado</span></li>
+          <li class="cert-item"><span class="cert-num">02</span><span class="cert-name">Python</span><span class="cert-tag" data-i18n="cert.tag">Certificado</span></li>
+          <li class="cert-item"><span class="cert-num">03</span><span class="cert-name" data-i18n="cert.3">Linux y la Terminal</span><span class="cert-tag" data-i18n="cert.tag">Certificado</span></li>
+          <li class="cert-item"><span class="cert-num">04</span><span class="cert-name" data-i18n="cert.4">Git y GitHub</span><span class="cert-tag" data-i18n="cert.tag">Certificado</span></li>
+          <li class="cert-item"><span class="cert-num">05</span><span class="cert-name" data-i18n="cert.5">Python avanzado</span><span class="cert-tag" data-i18n="cert.tag">Certificado</span></li>
         </ul>
+
       </div>
     </section>
 
     <!-- ==================== TU IDEA ==================== -->
-    <section class="section-idea" id="idea">
+    <section class="section-idea" id="idea" aria-labelledby="idea-title">
       <div class="container">
         <div class="idea-panel">
           <div class="idea-glow" aria-hidden="true"></div>
-          <p class="idea-eyebrow">HAGAMOS ALGO CON TU IDEA</p>
-          <h2 class="idea-title">Tu proyecto merece tener su propio espacio en internet.</h2>
-          <p class="idea-text">
-            ¿Tienes un negocio, quieres dar visibilidad a tu marca personal o tienes una idea que te gustaría llevar a la web?
-            Me encantará conocer tu proyecto. Cuéntame qué tienes en mente y exploremos juntos cómo podemos darle forma.
-          </p>
+          <h2 class="idea-title" id="idea-title" data-i18n="idea.title">¿Tienes una idea? Hagámosla realidad</h2>
+          <p class="idea-subtitle" data-i18n="idea.subtitle">¿Una página web, una aplicación o un proyecto digital?</p>
+          <p class="idea-text" data-i18n="idea.text">Cuéntame qué tienes en mente. Me encantará conocer tu propuesta, explorar posibilidades y descubrir cómo podemos darle forma.</p>
           <a href="#contacto" class="btn btn-light">
-            <span>Cuéntame tu idea</span>
+            <span data-i18n="idea.cta">Cuéntame tu idea</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
@@ -227,16 +573,16 @@
     </section>
 
     <!-- ==================== CONTACTO ==================== -->
-    <section class="section section-contact" id="contacto">
+    <section class="section section-contact" id="contacto" aria-labelledby="contact-title">
       <div class="container">
         <div class="contact-grid">
           <div class="contact-channels">
-            <p class="eyebrow">Contacto</p>
-            <h2 class="section-title">Hablemos</h2>
-            <p class="contact-lead">Escríbeme y conversamos.</p>
+            <p class="eyebrow" data-i18n="contact.eyebrow">Contacto</p>
+            <h2 class="section-title" id="contact-title" data-i18n="contact.title">Hablemos</h2>
+            <p class="contact-lead" data-i18n="contact.lead">Escríbeme y conversamos.</p>
             <ul class="channels-list">
               <li class="channel-item">
-                <span class="channel-name">Correo electrónico</span>
+                <span class="channel-name" data-i18n="contact.email">Correo electrónico</span>
                 <a href="mailto:gema.espada94@gmail.com" class="channel-link">gema.espada94@gmail.com</a>
               </li>
               <li class="channel-item">
@@ -247,31 +593,35 @@
                 <span class="channel-name">GitHub</span>
                 <a href="https://github.com/gemaespada" target="_blank" rel="noopener noreferrer" class="channel-link">Gema Espada</a>
               </li>
+              <li class="channel-item">
+                <span class="channel-name">WhatsApp</span>
+                <a href="https://wa.me/34689062235" target="_blank" rel="noopener noreferrer" class="channel-link">+34 689 062 235</a>
+              </li>
             </ul>
           </div>
 
           <div class="contact-form-card">
-            <h3 class="form-title">Enviarme un mensaje</h3>
+            <h3 class="form-title" data-i18n="form.title">Enviarme un mensaje</h3>
             <form class="contact-form" id="contact-form" novalidate>
               <div class="form-group">
-                <label for="contact-name">Nombre</label>
-                <input type="text" id="contact-name" name="name" aria-describedby="error-name" placeholder="Tu nombre" required>
+                <label for="contact-name" data-i18n="form.name">Nombre</label>
+                <input type="text" id="contact-name" name="name" autocomplete="name" aria-describedby="error-name" placeholder="Tu nombre" data-i18n-attr="placeholder:form.name.ph" required>
                 <span class="field-error" id="error-name" aria-live="polite"></span>
               </div>
               <div class="form-group">
-                <label for="contact-email">Correo electrónico</label>
-                <input type="email" id="contact-email" name="email" aria-describedby="error-email" placeholder="tu.correo@ejemplo.com" required>
+                <label for="contact-email" data-i18n="form.email">Correo electrónico</label>
+                <input type="email" id="contact-email" name="email" autocomplete="email" aria-describedby="error-email" placeholder="tu.correo@ejemplo.com" data-i18n-attr="placeholder:form.email.ph" required>
                 <span class="field-error" id="error-email" aria-live="polite"></span>
               </div>
               <div class="form-group">
-                <label for="contact-message">Mensaje</label>
-                <textarea id="contact-message" name="message" aria-describedby="error-message" rows="4" placeholder="Escribe aquí tu mensaje..." required></textarea>
+                <label for="contact-message" data-i18n="form.message">Mensaje</label>
+                <textarea id="contact-message" name="message" aria-describedby="error-message" rows="4" placeholder="Escribe aquí tu mensaje..." data-i18n-attr="placeholder:form.message.ph" required></textarea>
                 <span class="field-error" id="error-message" aria-live="polite"></span>
               </div>
               <button type="submit" class="btn btn-primary btn-block" id="btn-submit-contact">
-                <span>Enviar mensaje</span>
+                <span data-i18n="form.submit">Enviar mensaje</span>
               </button>
-              <p class="form-hint">Al enviar se abrirá tu aplicación de correo con el mensaje ya redactado, para que lo envíes desde ella.</p>
+              <p class="form-hint" data-i18n="form.hint">Al enviar se abrirá tu aplicación de correo con el mensaje ya redactado, para que lo envíes desde ella.</p>
             </form>
             <div class="form-notification" id="form-notification" role="status" aria-live="polite"></div>
           </div>
@@ -284,10 +634,16 @@
   <footer class="footer">
     <div class="container footer-container">
       <p>&copy; <span id="current-year">2026</span> Gema Espada Valverde</p>
-      <a href="#top" class="back-to-top" aria-label="Volver al inicio de la página">Subir ↑</a>
+      <a href="#top" class="back-to-top" aria-label="Volver al inicio de la página" data-i18n-attr="aria-label:footer.topAria" data-i18n="footer.top">Subir ↑</a>
     </div>
   </footer>
 
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/34689062235?text=Hola%2C%20he%20visitado%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20contactar%20contigo" class="wa-float" id="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp (se abre en una pestaña nueva)" data-tooltip="Contactar por WhatsApp" data-i18n-attr="aria-label:social.whatsapp.aria;data-tooltip:social.whatsapp.tip">
+    <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+  </a>
+
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

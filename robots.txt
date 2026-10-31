@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sustituir __SITE_URL__ por el dominio definitivo (ver README: set-site-url.sh)
+Sitemap: __SITE_URL__/sitemap.xml

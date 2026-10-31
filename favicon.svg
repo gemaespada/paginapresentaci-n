@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="GE">
+  <title>GE</title>
+  <style>
+    .bg { fill: #14194d; }
+    .fg { fill: none; stroke: #ffffff; stroke-width: 5.2; stroke-linecap: round; stroke-linejoin: round; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #e6ebff; }
+      .fg { stroke: #14194d; }
+    }
+  </style>
+  <rect class="bg" width="64" height="64" rx="15"/>
+  <!-- G -->
+  <path class="fg" d="M30.6 24.6A11 11 0 1 0 33 32H23.6"/>
+  <!-- E -->
+  <path class="fg" d="M53 21H41.5V43H53M41.5 32H51"/>
+</svg>
